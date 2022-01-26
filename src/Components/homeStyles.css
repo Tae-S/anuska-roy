@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --z:1 !important;
+}
+
+.img{
+    width:250px;
+    position: fixed;
+    top:200px;
+    left:50px;
+    z-index: var(--z);
+}
+
+.slider-container{
+    /* border:1px solid black; */
+    height:6rem;
+    width:100vw;
+    position: absolute;
+    top:52%;
+    /* background-image: url('./../imgs/homePageSliderBGFinal.png'); */
+    background-image: url('./../imgs/homePageSliderBG.png');
+    background-size: 120% 100%;
+    background-position-x: -35px;
+    background-position-y: -0.25rem;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    /* border:1px solid black; */
+    z-index: var(--z);
+    transform: translateY(-50%);
+}
+
+.slider{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    align-items: center;
+    position: relative;
+    top:2px;
+    /* border: 1px solid yellow; */
+    animation: slider-mob-anim 8s infinite linear forwards;
+    /* transform: translate(-10%); */    
+    font-family: 'Gloria Hallelujah', cursive;    
+    z-index: var(--z);
+}
+
+@media only screen and (min-width:1000px) {
+    .slider{
+        animation: slider-anim 8s infinite linear forwards;
+    }
+}
+
+.slider-item{
+    font-size: 2.5rem;
+    /* border:1px solid green; */
+    padding:0 40px;
+    letter-spacing: 1px;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-weight: 400;
+}
+
+p{
+    display: inline;
+    margin-right:15px;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-weight: 400;
+}
+
+.two-word-item{
+    display: inline;
+    margin-right:15px;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-weight: 400;
+}
+
+@keyframes slider-anim{
+    0%{transform: translate(-12%);}
+    100%{transform: translate(112.5%);}
+}
+
+@keyframes slider-mob-anim{
+    0%{transform: translate(-10%);}
+    100%{transform: translate(243%);}
+}

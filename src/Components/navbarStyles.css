@@ -1,0 +1,189 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Chewy', cursive;
+}
+
+.nav{    
+    position: fixed; 
+}
+
+.nav-ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: absolute;
+    width:98vw;
+    padding:10px 0 10px 0;
+    /* border:1px solid black; */      
+}  
+.nav-li{
+    list-style-type: none; 
+}
+
+.nav-li > a{
+    text-decoration: none;
+    color:tomato;
+    font-weight: 700;
+    font-family: 'Chewy', cursive;
+    letter-spacing: 2px;
+    font-size: 1.3rem;
+}
+
+.mob-nav{
+    perspective: 100px;
+    transform-style: preserve-3d;
+    position: fixed;
+    right:30px;
+    z-index:3 !important;
+}
+
+.mob-nav-menu{
+    background-color: rgb(107, 39, 156);
+    color:wheat;
+    position: fixed;
+    border-radius: 50%;
+    width:60px;
+    height:60px;
+    right:30px;
+    /* cursor:pointer; */     
+    margin: 25px 0 0 35px;
+    /* background-color: rgb(128, 171, 250); */
+    z-index:3 !important;
+    transition: all 0.4s ease-in;
+    /* border: 1px solid black; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+          
+}
+
+.menu-link-holder{
+    position: absolute;
+    top:0;
+    left:20px;
+    text-align: center;
+    transform: translate(-50%,-50%);
+}
+
+.mob-nav:hover .mob-nav-menu{
+    background-color: rgb(87, 31, 128);
+    color:#aff;
+    transform: scale(0.9);
+     
+}
+
+.mob-nav:hover .circle{
+    opacity: 1;
+     
+}
+
+.mob-nav:hover .one{
+    transform:translate(30px,80px) translateZ(20px) skewY(5deg);
+     
+}
+
+.mob-nav:hover .two{
+    transform:translate(115px,90px) translateZ(-10px);
+     
+}
+
+.mob-nav:hover .three{
+    transform:translate(100px,10px) skewX(15deg) rotate(45deg);
+     
+}
+
+.mob-nav:hover .four{
+    transform:translate(15px,5px);
+     
+}
+
+.circle-hover{
+    position: fixed;
+    right:110px;
+    border-radius: 50%;
+    width:15px;
+    height: 15px;
+    transition: all 0.5s ease-out;
+    z-index:1;
+     
+}
+
+.one-hover{
+    transform:translate(30px,80px) translateZ(20px) skewY(5deg) !important;
+    opacity:1;
+     
+}
+
+.two-hover{
+    transform:translate(115px,90px) translateZ(-10px) !important;
+    opacity:1;
+     
+}
+
+.three-hover{
+    transform:translate(100px,10px) skewX(15deg) rotate(45deg) !important;
+    opacity:1;     
+}
+
+.four-hover{
+    transform:translate(15px,5px) !important;
+    opacity:1;
+     
+}
+
+.mob-nav-hover{
+    background-color: rgb(87, 31, 128);
+    color:#aff;
+    transform: scale(0.9);
+     
+}
+
+.mob-nav-menu > p{
+    position: relative;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+     
+}
+
+.circle{
+    position: fixed;
+    right:110px;
+    border-radius: 50%;
+    width:15px;
+    height: 15px;
+    transition: all 0.5s ease-out;
+    opacity:0;
+    z-index:1;
+     
+}
+
+.one{
+    background-color: gold;
+    transform:translate(58px,44px) skewY(5deg);
+          
+}
+
+.two{
+    background-color: tomato;
+    height: 16px;
+    transform:translate(58px,44px);
+     
+}
+
+.three{
+    background-color: blueviolet;
+    width:15.6px;
+    height: 17px;
+    transform:translate(58px,44px) skewX(15deg) rotate(45deg);
+     
+}
+
+.four{
+    background-color: olivedrab;
+    transform:translate(58px,44px);
+     
+}
