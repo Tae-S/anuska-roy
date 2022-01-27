@@ -82,58 +82,86 @@ function MenuPage()
         })
         
     }
-    const [touches,setTouches] = useState([0,-1]) // no.oftouches,onIndex
+    let [ts,setTs] = useState(new Float32Array())
+    const [touches,setTouches] = useState([1,-1]) // no.oftouches,onIndex
     const handleClick = (index,mobile)=>{
         if(mobile)
         {
-            if(index === 0)
+            
+            setTs((pre)=>{
+                //pre.push(index)
+                console.log(typeof(pre),pre)
+                return[...pre,index]
+                
+            })
+            
+            // for(let i=0; i<ts.length; i++)
+            // {
+
+            // }
+            if(ts.length >= 2)
             {
-                setTouches((pre)=>{
-                    if(pre[1] === index) return[pre[0]+1,index]
-                    else return[0,index]
-                })
-                if(touches[0] === 2)
+                if(ts[ts.length-1] === ts[ts.length-2])
                 {
-                    window.location.pathname ='/profile'        
+                    if(ts[ts.length-1] === 0) window.location.pathname ='/profile'
+                    else if(ts[ts.length-1] === 1) window.location.pathname ='/work'
+                    else if(ts[ts.length-1] === 2) window.location.pathname ='/contact'
+                    else if(ts[ts.length-1] === 3) window.location.pathname ='/'
                 }
-                //else do the mouseenter
             }
-            else if(index === 1)
-            {
-                setTouches((pre)=>{
-                    if(pre[1] === index) return[pre[0]+1,index]
-                    else return[0,index]
-                })
-                if(touches[0] === 2)
-                {
-                    window.location.pathname ='/work'
-                }
-                //else do the mouseenter
-            }
-            else if(index === 2)
-            {
-                setTouches((pre)=>{
-                    if(pre[1] === index) return[pre[0]+1,index]
-                    else return[0,index]
-                })
-                if(touches[0] === 2)
-                {
-                    window.location.pathname ='/contact'
-                }
-                //else do the mouseenter
-            }
-            else if(index === 3)
-            {
-                setTouches((pre)=>{
-                    if(pre[1] === index) return[pre[0]+1,index]
-                    else return[0,index]
-                })
-                if(touches[0] === 2)
-                {
-                    window.location.pathname ='/'
-                }
-                //else do the mouseenter
-            }
+            // if(index === 0)
+            // {
+            //     setTouches((pre)=>{
+            //         if(pre[1] === index) return[pre[0]+1,index]
+            //         else if(pre[1] <= -1) return[pre[0]+1,index]
+            //         else return[-1,-2]
+            //     })
+            //     if(touches[0] === 2)
+            //     {
+            //         window.location.pathname ='/profile'        
+            //     }
+            //     //else do the mouseenter
+            // }
+            // else if(index === 1)
+            // {
+            //     setTouches((pre)=>{
+            //         if(pre[1] === index) return[pre[0]+1,index]
+            //         else if(pre[1] < 0) return[pre[0]+1,index]
+            //         else return[-1,-2]
+            //     })
+            //     if(touches[0] === 2)
+            //     {
+            //         window.location.pathname ='/work'
+            //     }
+            //     //else do the mouseenter
+            // }
+            // else if(index === 2)
+            // {
+            //     setTouches((pre)=>{
+            //         if(pre[1] === index) return[pre[0]+1,index]
+            //         else if(pre[1] < 0) return[pre[0]+1,index]
+            //         else return[0,index]
+            //     })
+            //     if(touches[0] === 2)
+            //     {
+            //         window.location.pathname ='/contact'
+            //     }
+            //     //else do the mouseenter
+            // }
+            // else if(index === 3)
+            // {
+            //     setTouches((pre)=>{
+            //         if(pre[1] === index) return[pre[0]+1,index]
+            //         else if(pre[1] < 0) return[pre[0]+1,index]
+            //         else return[0,index]
+            //     })
+            //     if(touches[0] === 2)
+            //     {
+            //         window.location.pathname ='/'
+            //     }
+            //     //else do the mouseenter
+            // }
+            // console.log(touches,' touches')
         }
         else if(!mobile)
         {

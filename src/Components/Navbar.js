@@ -80,7 +80,7 @@ function Navbar()
             })
             if(menuText === 'Menu')
             {
-                console.log('menutext is menu')
+                //console.log('menutext is menu')
                 mobNav!==null? mobNav.classList.remove('mob-nav-hover'): mobNav = null
                 let circles = document.querySelectorAll('.circle-hover')
                 for(let i=0; i<circles.length; i++)
@@ -95,7 +95,7 @@ function Navbar()
             }
             else if(menuText === 'Close')
             {
-                console.log('menutext is close')
+                //console.log('menutext is close')
                 mobNav.classList.add('mob-nav-hover')
                 let circles = document.querySelectorAll('.circle')
                 for(let i=0; i<circles.length; i++)
