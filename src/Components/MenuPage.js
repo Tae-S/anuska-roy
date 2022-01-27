@@ -101,20 +101,20 @@ function MenuPage()
 
     return(
         <div className='menu-container'>
-            <div onMouseEnter={()=>onMouseEnter(0)} onMouseLeave={()=>onMouseLeave(0)} className='menu-item-container'>
+            <div onFocus={()=>onMouseEnter(0)} onBlur={()=>onMouseLeave(0)} onMouseEnter={()=>onMouseEnter(0)} onMouseLeave={()=>onMouseLeave(0)} className='menu-item-container'>
                 <div className='menu-item' onClick={()=>handleClick(0)} >Profile</div>
                 <div className='menu-item-img-holder'><img src={menuItem1} className='menu-item-image'/></div>
                 
             </div>
-            <div onClick={()=>handleClick(1)} onMouseEnter={()=>onMouseEnter(1)} onMouseLeave={()=>onMouseLeave(1)} className='menu-item-container'>
+            <div onFocus={()=>onMouseEnter(1)} onBlur={()=>onMouseLeave(1)} onClick={()=>handleClick(1)} onMouseEnter={()=>onMouseEnter(1)} onMouseLeave={()=>onMouseLeave(1)} className='menu-item-container'>
                 <div className='menu-item-img-holder'><img src={menuItem2} className='menu-item-image'/></div>
                 <div  className='menu-item'>Work</div>
             </div>
-            <div onMouseEnter={()=>onMouseEnter(2)} onMouseLeave={()=>onMouseLeave(2)} className='menu-item-container'>
+            <div onFocus={()=>onMouseEnter(2)} onBlur={()=>onMouseLeave(2)} onMouseEnter={()=>onMouseEnter(2)} onMouseLeave={()=>onMouseLeave(2)} className='menu-item-container'>
                 <div className='menu-item-img-holder'><img src={menuItem3} className='menu-item-image'/></div>
                 <div onClick={()=>handleClick(2)} className='menu-item'>Contact</div>
             </div>
-            <div onMouseEnter={()=>onMouseEnter(3)} onMouseLeave={()=>onMouseLeave(3)} className='menu-item-container'>
+            <div onFocus={()=>onMouseEnter(3)} onBlur={()=>onMouseLeave(3)} onMouseEnter={()=>onMouseEnter(3)} onMouseLeave={()=>onMouseLeave(3)} className='menu-item-container'>
                 <div className='menu-item-img-holder'><img src={menuItem4} className='menu-item-image'/></div>
                 <div onClick={()=>handleClick(3)} className='menu-item'>Home</div>
             </div>
