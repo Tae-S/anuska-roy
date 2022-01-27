@@ -9,7 +9,9 @@ function MenuPage()
 {
     // const item = document.querySelector('div')
     // item.style.zIndex
-    
+    let isTouchScreen = false
+    if ("ontouchstart" in document.documentElement) isTouchScreen = true
+    else isTouchScreen = false
     const [path,setPath] = useState(document.location.pathname.substr(1,document.location.pathname.length-1))
     //path = path.substr(1,path.length-1)
     useEffect(()=>{
@@ -80,7 +82,59 @@ function MenuPage()
         })
         
     }
-    const handleClick = (index)=>{
+    const [touches,setTouches] = useState([0,-1]) // no.oftouches,onIndex
+    const handleClick = (index,mobile)=>{
+        if(mobile)
+        {
+            if(index === 0)
+            {
+                setTouches((pre)=>{
+                    if(pre[1] === index) return[pre[0]+1,index]
+                    else return[0,index]
+                })
+                if(touches[0] === 2)
+                {
+                    window.location.pathname ='/profile'        
+                }
+                //else do the mouseenter
+            }
+            else if(index === 1)
+            {
+                setTouches((pre)=>{
+                    if(pre[1] === index) return[pre[0]+1,index]
+                    else return[0,index]
+                })
+                if(touches[0] === 2)
+                {
+                    window.location.pathname ='/work'
+                }
+                //else do the mouseenter
+            }
+            else if(index === 2)
+            {
+                setTouches((pre)=>{
+                    if(pre[1] === index) return[pre[0]+1,index]
+                    else return[0,index]
+                })
+                if(touches[0] === 2)
+                {
+                    window.location.pathname ='/contact'
+                }
+                //else do the mouseenter
+            }
+            else if(index === 3)
+            {
+                setTouches((pre)=>{
+                    if(pre[1] === index) return[pre[0]+1,index]
+                    else return[0,index]
+                })
+                if(touches[0] === 2)
+                {
+                    window.location.pathname ='/'
+                }
+                //else do the mouseenter
+            }
+        }
         if(index === 0)
         {
             window.location.pathname ='/profile'
@@ -98,25 +152,27 @@ function MenuPage()
             window.location.pathname ='/'
         }
     }
+    
+
 
     return(
         <div className='menu-container'>
-            <div onFocus={()=>onMouseEnter(0)} onBlur={()=>onMouseLeave(0)} onMouseEnter={()=>onMouseEnter(0)} onMouseLeave={()=>onMouseLeave(0)} className='menu-item-container'>
-                <div className='menu-item' onClick={()=>handleClick(0)} >Profile</div>
+            <div onClick={()=>handleClick(0,isTouchScreen)} onFocus={()=>onMouseEnter(0)} onBlur={()=>onMouseLeave(0)} onMouseEnter={()=>onMouseEnter(0)} onMouseLeave={()=>onMouseLeave(0)} className='menu-item-container'>
+                <div className='menu-item' >Profile</div>
                 <div className='menu-item-img-holder'><img src={menuItem1} className='menu-item-image'/></div>
                 
             </div>
-            <div onFocus={()=>onMouseEnter(1)} onBlur={()=>onMouseLeave(1)} onClick={()=>handleClick(1)} onMouseEnter={()=>onMouseEnter(1)} onMouseLeave={()=>onMouseLeave(1)} className='menu-item-container'>
+            <div onFocus={()=>onMouseEnter(1)} onBlur={()=>onMouseLeave(1)} onClick={()=>handleClick(1,isTouchScreen)} onMouseEnter={()=>onMouseEnter(1)} onMouseLeave={()=>onMouseLeave(1)} className='menu-item-container'>
                 <div className='menu-item-img-holder'><img src={menuItem2} className='menu-item-image'/></div>
                 <div  className='menu-item'>Work</div>
             </div>
-            <div onFocus={()=>onMouseEnter(2)} onBlur={()=>onMouseLeave(2)} onMouseEnter={()=>onMouseEnter(2)} onMouseLeave={()=>onMouseLeave(2)} className='menu-item-container'>
+            <div onClick={()=>handleClick(2,isTouchScreen)} onFocus={()=>onMouseEnter(2)} onBlur={()=>onMouseLeave(2)} onMouseEnter={()=>onMouseEnter(2)} onMouseLeave={()=>onMouseLeave(2)} className='menu-item-container'>
                 <div className='menu-item-img-holder'><img src={menuItem3} className='menu-item-image'/></div>
-                <div onClick={()=>handleClick(2)} className='menu-item'>Contact</div>
+                <div className='menu-item'>Contact</div>
             </div>
-            <div onFocus={()=>onMouseEnter(3)} onBlur={()=>onMouseLeave(3)} onMouseEnter={()=>onMouseEnter(3)} onMouseLeave={()=>onMouseLeave(3)} className='menu-item-container'>
+            <div onClick={()=>handleClick(3,isTouchScreen)} onFocus={()=>onMouseEnter(3)} onBlur={()=>onMouseLeave(3)} onMouseEnter={()=>onMouseEnter(3)} onMouseLeave={()=>onMouseLeave(3)} className='menu-item-container'>
                 <div className='menu-item-img-holder'><img src={menuItem4} className='menu-item-image'/></div>
-                <div onClick={()=>handleClick(3)} className='menu-item'>Home</div>
+                <div className='menu-item'>Home</div>
             </div>
             {/* <p className='menu-item'>Profile</p>
             <div className='menu-item-img-holder'><img src={menuItem1} className='menu-item-image'/></div>
