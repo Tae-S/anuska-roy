@@ -67,6 +67,19 @@ function Navbar()
     const onMouseLeave = ()=>{
         setLinkColor('#fda')
     }
+    const onClick = ()=>{
+        if(width < 1000){
+            setMenuText((pre)=>{
+                if(pre === 'Menu') return 'Close'
+                else if(pre === 'Close') return 'Menu'
+                else{
+                    console.log('error in setMenuText in onClick')
+                    return pre
+                }
+            })
+        }
+    }
+
     const linkStyles = {
         'color':linkColor,
         'transition':'all 0.4s ease-in',
@@ -105,7 +118,7 @@ function Navbar()
             </header>
             ):(
                 <header className='mob-nav'>
-                    <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className='mob-nav-menu'><p className='menu-link-holder'><Link to={path==='menu'?'/':'/menu'} style={linkStyles}>{menuText}</Link></p></div>
+                    <div onClick={()=>onClick()} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className='mob-nav-menu'><p className='menu-link-holder'><Link to={path==='menu'?'/':'/menu'} style={linkStyles}>{menuText}</Link></p></div>
                     <div className='circle one'></div>
                     <div className='circle two'></div>
                     <div className='circle three'></div>
