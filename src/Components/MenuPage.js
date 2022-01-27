@@ -135,22 +135,26 @@ function MenuPage()
                 //else do the mouseenter
             }
         }
-        if(index === 0)
+        else if(!mobile)
         {
-            window.location.pathname ='/profile'
+            if(index === 0)
+            {
+                window.location.pathname ='/profile'
+            }
+            else if(index === 1)
+            {
+                window.location.pathname ='/work'
+            }
+            else if(index === 2)
+            {
+                window.location.pathname ='/contact'
+            }
+            else if(index === 3)
+            {
+                window.location.pathname ='/'
+            }
         }
-        else if(index === 1)
-        {
-            window.location.pathname ='/work'
-        }
-        else if(index === 2)
-        {
-            window.location.pathname ='/contact'
-        }
-        else if(index === 3)
-        {
-            window.location.pathname ='/'
-        }
+        
     }
     
 

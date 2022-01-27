@@ -68,6 +68,7 @@ function Navbar()
         setLinkColor('#fda')
     }
     const onClick = ()=>{
+        let mobNav = document.querySelector('.mob-nav')
         if(width < 1000){
             setMenuText((pre)=>{
                 if(pre === 'Menu') return 'Close'
@@ -77,6 +78,37 @@ function Navbar()
                     return pre
                 }
             })
+            if(menuText === 'Menu')
+            {
+                console.log('menutext is menu')
+                mobNav!==null? mobNav.classList.remove('mob-nav-hover'): mobNav = null
+                let circles = document.querySelectorAll('.circle-hover')
+                for(let i=0; i<circles.length; i++)
+                {
+                    circles[i].classList.add('circle')
+                    circles[i].classList.remove('circle-hover')
+                    if(i===0)circles[i].classList.remove('one-hover')
+                    else if(i===1)circles[i].classList.remove('two-hover')
+                    else if(i===2)circles[i].classList.remove('three-hover')
+                    else if(i===3)circles[i].classList.remove('four-hover')
+                }
+            }
+            else if(menuText === 'Close')
+            {
+                console.log('menutext is close')
+                mobNav.classList.add('mob-nav-hover')
+                let circles = document.querySelectorAll('.circle')
+                for(let i=0; i<circles.length; i++)
+                {
+                    circles[i].classList.remove('circle')
+                    circles[i].classList.add('circle-hover')
+                    if(i===0)circles[i].classList.add('one-hover')
+                    else if(i===1)circles[i].classList.add('two-hover')
+                    else if(i===2)circles[i].classList.add('three-hover')
+                    else if(i===3)circles[i].classList.add('four-hover')
+                }
+                
+            }
         }
     }
 
