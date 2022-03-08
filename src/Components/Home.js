@@ -1,5 +1,6 @@
 import './homeStyles.css'
-import bgItem2 from './../imgs/bgItem2.svg'
+import bgItem2 from './../imgs/bgCat1.png'
+import bgItem1 from './../imgs/bgCat2.png'
 
 import { useEffect, useRef, useState } from "react"
 
@@ -74,9 +75,18 @@ function Home()
         // 'transform':`translateX(${(temp).toString() + 'px'})`
         'transform':`translateX(${preScr.current > x?((x-x/100 - Math.random()*15)/7).toString() + 'px':((x+x/100 + Math.random()*15)/7).toString() + 'px'}) rotate(${preScr>x?((x+x/100)/15).toString() + 'deg':((x-x/100)/15).toString() + 'deg'})`
     }
+    const imgStyles2 = {    
+        // 'transform':`translateX(${(temp).toString() + 'px'})`
+        'position':'absolute',
+        'top':'700px',
+        'left':'70%',
+        'width':'150px',
+        'transform':`translateX(${preScr.current > x?((x-x/100 - Math.random()*25)/7).toString() + 'px':((x+x/100 + Math.random()*25)/7).toString() + 'px'}) rotate(${preScr>x?-1* ((x-x/100)/8).toString() + 'deg':-1*((x+x/100)/8).toString() + 'deg'})`
+    }
     return(
         <>
             <img style={imgStyles} className='img' src={bgItem2} />
+            <img style={imgStyles2} className='img' src={bgItem1} />
             <div className='slider-container'>
                 <div className='slider'>
                     <div className='slider-item'><p>Illustrator</p></div>

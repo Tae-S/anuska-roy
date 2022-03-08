@@ -1,9 +1,14 @@
 import './menuPageStyles.css'
-import menuItem1 from './../imgs/menuItem1.svg'
-import menuItem2 from './../imgs/menuItem2.svg'
-import menuItem3 from './../imgs/menuItem3.svg'
-import menuItem4 from './../imgs/menuItem4.svg'
+// import menuItem1 from './../imgs/menuItem1.svg'
+// import menuItem2 from './../imgs/menuItem2.svg'
+// import menuItem3 from './../imgs/menuItem3.svg'
+// import menuItem4 from './../imgs/menuItem4.svg'
+import menuItem3 from './../imgs/menuModel3.png'
+import menuItem2 from './../imgs/menuModel2.png'
+import menuItem1 from './../imgs/menuModel1.png'
 import { useEffect, useState } from 'react'
+
+const menuItem4 = null
 
 function MenuPage()
 {

@@ -1,3 +1,4 @@
+//TODO: translate-left on menupage (for menu titles)
 // import logo from './logo.svg'
 // import './App.css'
 import React from 'react'
