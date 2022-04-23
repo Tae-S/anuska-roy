@@ -33,7 +33,6 @@ function Home()
                 // return temp
                 return window.scrollY
             })
-            
         }
         // if(preScr.current > x)temp = x - x/100
         // else{
