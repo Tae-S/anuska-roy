@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './navbarStyles.css'
 //use history api to go to the right page when you close the menu thing
 
 function Navbar()
 {
+    const navigate = useNavigate()
     let path = document.location.pathname
     path = path.substr(1,path.length-1)
     const[menuText,setMenuText] = useState('Menu')
@@ -69,7 +70,7 @@ function Navbar()
     }
     const onClick = ()=>{
         let mobNav = document.querySelector('.mob-nav')
-        if(width < 1000){
+        // if(width < 1000){
             setMenuText((pre)=>{
                 if(pre === 'Menu') return 'Close'
                 else if(pre === 'Close') return 'Menu'
@@ -109,7 +110,8 @@ function Navbar()
                 }
                 
             }
-        }
+            navigate(`${path==='menu'?'/':'/menu'}`)
+        // }
     }
 
     const linkStyles = {
@@ -117,18 +119,19 @@ function Navbar()
         'transition':'all 0.4s ease-in',
         'textDecoration':'none',
         'cursor':'pointer',
-        'fontFamily': `'Chewy', cursive`,
+        "fontFamily": "'Quicksand', sans-serif",
         'letterSpacing' : '2px',
-        'fontSize':'1.2rem',
-        'textAlign':'center',
-        'top':'-10px',
-        'left':'-22px',
+        'fontSize':'1.1rem',
+        'textAlign':'left',
+        'top':'17px',
+        'left':'-15px',
+        'fontWeight':'600',
         'position':'absolute'
         
     }
     return(
         <>
-            {width>1000?(
+            {/* {width>1000?(
             <header className='nav'>
                 <ul className='nav-ul'>
                     <li className='nav-li'>
@@ -148,16 +151,26 @@ function Navbar()
                     </li>
                 </ul>
             </header>
-            ):(
+            ):( */}
                 <header className='mob-nav'>
-                    <div onClick={()=>onClick()} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className='mob-nav-menu'><p className='menu-link-holder'><Link to={path==='menu'?'/':'/menu'} style={linkStyles}>{menuText}</Link></p></div>
+                    <div 
+                        onClick={()=>onClick()}
+                        onMouseEnter={onMouseEnter}
+                        onMouseLeave={onMouseLeave} 
+                        className='mob-nav-menu'>
+                            <div className='menu-link-holder'>
+                                <p  style={linkStyles}>
+                                    {menuText}
+                                </p>
+                            </div>
+                    </div>
                     <div className='circle one'></div>
                     <div className='circle two'></div>
                     <div className='circle three'></div>
                     <div className='circle four'></div>
                 </header>
         
-            )}
+            {/* )} */}
         </>
 )}
             

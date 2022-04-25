@@ -1,11 +1,15 @@
 import './homeStyles.css'
 import bgItem2 from './../imgs/bgCat1.png'
 import bgItem1 from './../imgs/bgCat2.png'
+import dp from './../imgs/dp.jpeg'
 
 import { useEffect, useRef, useState } from "react"
 
 function Home()
 {
+    let isTouchScreen = false
+    if ("ontouchstart" in document.documentElement) isTouchScreen = true
+    else isTouchScreen = false
     
     const [x,setX] = useState(window.scrollY)
     const preScr = useRef()
@@ -72,42 +76,57 @@ function Home()
     })    
     const imgStyles = {    
         // 'transform':`translateX(${(temp).toString() + 'px'})`
-        'transform':`translateX(${preScr.current > x?((x-x/100 - Math.random()*15)/7).toString() + 'px':((x+x/100 + Math.random()*15)/7).toString() + 'px'}) rotate(${preScr>x?((x+x/100)/15).toString() + 'deg':((x-x/100)/15).toString() + 'deg'})`
+        'transform':`translateX(${preScr.current > x?((x-x/100 - Math.random()*15)/7).toString() + 'px':((x+x/100 + Math.random()*15)/7).toString() + 'px'}) rotate(${preScr>x?((x+x/100)/15).toString() + 'deg':((x-x/100)/15).toString() + 'deg'})`,
+        "top": isTouchScreen? '80%': '200px'
     }
     const imgStyles2 = {    
         // 'transform':`translateX(${(temp).toString() + 'px'})`
         'position':'absolute',
-        'top':'700px',
-        'left':'70%',
-        'width':'150px',
+        'top':isTouchScreen? '30%':'33%',
+        'left': isTouchScreen? '60%':'78%',
+        'width':'100px',
         'transform':`translateX(${preScr.current > x?((x-x/100 - Math.random()*25)/7).toString() + 'px':((x+x/100 + Math.random()*25)/7).toString() + 'px'}) rotate(${preScr>x?-1* ((x-x/100)/8).toString() + 'deg':-1*((x+x/100)/8).toString() + 'deg'})`
     }
     return(
         <>
+            <section className='intro-section'>
+                <img src={ dp } alt="Anuska's display pic" />
+                <p>
+                    I am a writer, editor and creative content creator.
+                    Content creation has been a passion for me ever
+                    since I could understand how to put words together
+                    ans colours against each other.
+                    <br/>
+                    I have worked with organisations in domains of
+                    production, creation, curation and editing content.
+                </p>
+            </section>
             <img style={imgStyles} className='img' src={bgItem2} />
-            <img style={imgStyles2} className='img' src={bgItem1} />
+            <img style={imgStyles2} className='img img2' src={bgItem1} />
             <div className='slider-container'>
                 <div className='slider'>
+                    <div className='slider-item'><p>Writer</p></div>
+                    <div className='slider-item'><p>Editor</p></div>
                     <div className='slider-item'><p>Illustrator</p></div>
-                    <div className='slider-item'><p className='two-word-item'>Social</p><p className='two-word-item'>Activist</p></div>
-                    <div className='slider-item'><p className='two-word-item'>Creative</p><p className='two-word-item'>Writer</p></div>
-                    <div className='slider-item'><p>Designer</p></div>
-                    <div className='slider-item'><p className='two-word-item'>Blog</p><p className='two-word-item'>Writer</p></div>
+                    <div className='slider-item'><p className='two-word-item'>Graphic</p><p className='two-word-item'>Designer</p></div>
+                    {/* <div className='slider-item'><p className='two-word-item'>Social-Media</p><p className='two-word-item'>Manager</p></div> */}
                     <div className='slider-item'><p className='two-word-item'>Cat</p><p className='two-word-item'>Mom</p></div>
-
+                    
+                    <div className='slider-item'><p>Writer</p></div>
+                    <div className='slider-item'><p>Editor</p></div>
                     <div className='slider-item'><p>Illustrator</p></div>
-                    <div className='slider-item'><p className='two-word-item'>Social</p><p className='two-word-item'>Activist</p></div>
-                    <div className='slider-item'><p className='two-word-item'>Creative</p><p className='two-word-item'>Writer</p></div>
-                    <div className='slider-item'><p>Designer</p></div>
-                    <div className='slider-item'><p className='two-word-item'>Blog</p><p className='two-word-item'>Writer</p></div>
+                    <div className='slider-item'><p className='two-word-item'>Graphic</p><p className='two-word-item'>Designer</p></div>
+                    {/* <div className='slider-item'><p className='two-word-item'>Social-Media</p><p className='two-word-item'>Manager</p></div> */}
                     <div className='slider-item'><p className='two-word-item'>Cat</p><p className='two-word-item'>Mom</p></div>
-
+                    
+                    <div className='slider-item'><p>Writer</p></div>
+                    <div className='slider-item'><p>Editor</p></div>
                     <div className='slider-item'><p>Illustrator</p></div>
-                    <div className='slider-item'><p className='two-word-item'>Social</p><p className='two-word-item'>Activist</p></div>
-                    <div className='slider-item'><p className='two-word-item'>Creative</p><p className='two-word-item'>Writer</p></div>
-                    <div className='slider-item'><p>Designer</p></div>
-                    <div className='slider-item'><p className='two-word-item'>Blog</p><p className='two-word-item'>Writer</p></div>
+                    <div className='slider-item'><p className='two-word-item'>Graphic</p><p className='two-word-item'>Designer</p></div>
+                    {/* <div className='slider-item'><p className='two-word-item'>Social-Media</p><p className='two-word-item'>Manager</p></div> */}
                     <div className='slider-item'><p className='two-word-item'>Cat</p><p className='two-word-item'>Mom</p></div>
+                    
+                    
                 </div>
             </div>
         </>

@@ -41,7 +41,7 @@ function MenuPage()
         }
     })    
     const onMouseEnter = (index)=>{
-        //console.log('mose entered')
+        // console.log('mose entered')
         const menuContainer = document.querySelector('body')
         const containers = document.querySelectorAll('.menu-item-container')
         const imgContainers = document.querySelectorAll('.menu-item-img-holder')
@@ -63,12 +63,13 @@ function MenuPage()
                 imgs[i].style.visibility = 'hidden'
             }
         }
-        if(index === 0) menuContainer.style.backgroundColor = 'blue'
-        else if(index === 1) menuContainer.style.backgroundColor = 'green'
-        else if(index === 2) menuContainer.style.backgroundColor = 'gold'
-        else if(index === 3) menuContainer.style.backgroundColor = 'darkslategray'
+        if(index === 0) menuContainer.style.backgroundColor = '#9bf6ff'
+        else if(index === 1) menuContainer.style.backgroundColor = '#ffcdb2'
+        else if(index === 2) menuContainer.style.backgroundColor = '#fdffb6'
+        else if(index === 3) menuContainer.style.backgroundColor = '#eae4e9'
     }
     const onMouseLeave = (index)=>{
+        // console.log('mouse left')
         const menuContainer = document.querySelector('body')
         menuContainer.style.backgroundColor = 'rgb(245, 226, 198)'
         const containers = document.querySelectorAll('.menu-item-container')
@@ -100,17 +101,13 @@ function MenuPage()
                 
             })
             
-            // for(let i=0; i<ts.length; i++)
-            // {
-
-            // }
             if(ts.length >= 2)
             {
                 if(ts[ts.length-1] === ts[ts.length-2])
                 {
-                    if(ts[ts.length-1] === 0) window.location.pathname ='/profile'
+                    if(ts[ts.length-1] === 0) window.location.pathname ='/artwork'
                     else if(ts[ts.length-1] === 1) window.location.pathname ='/work'
-                    else if(ts[ts.length-1] === 2) window.location.pathname ='/contact'
+                    else if(ts[ts.length-1] === 2) window.location.pathname ='/shop'
                     else if(ts[ts.length-1] === 3) window.location.pathname ='/'
                 }
             }
@@ -172,7 +169,7 @@ function MenuPage()
         {
             if(index === 0)
             {
-                window.location.pathname ='/profile'
+                window.location.pathname ='/artwork'
             }
             else if(index === 1)
             {
@@ -180,7 +177,7 @@ function MenuPage()
             }
             else if(index === 2)
             {
-                window.location.pathname ='/contact'
+                window.location.pathname ='/shop'
             }
             else if(index === 3)
             {
@@ -195,7 +192,7 @@ function MenuPage()
     return(
         <div className='menu-container'>
             <div onClick={()=>handleClick(0,isTouchScreen)} onFocus={()=>onMouseEnter(0)} onBlur={()=>onMouseLeave(0)} onMouseEnter={()=>onMouseEnter(0)} onMouseLeave={()=>onMouseLeave(0)} className='menu-item-container'>
-                <div className='menu-item' >Profile</div>
+                <div className='menu-item' >Artwork</div>
                 <div className='menu-item-img-holder'><img src={menuItem1} className='menu-item-image'/></div>
                 
             </div>
@@ -205,7 +202,7 @@ function MenuPage()
             </div>
             <div onClick={()=>handleClick(2,isTouchScreen)} onFocus={()=>onMouseEnter(2)} onBlur={()=>onMouseLeave(2)} onMouseEnter={()=>onMouseEnter(2)} onMouseLeave={()=>onMouseLeave(2)} className='menu-item-container'>
                 <div className='menu-item-img-holder'><img src={menuItem3} className='menu-item-image'/></div>
-                <div className='menu-item'>Contact</div>
+                <div className='menu-item'>Shop</div>
             </div>
             <div onClick={()=>handleClick(3,isTouchScreen)} onFocus={()=>onMouseEnter(3)} onBlur={()=>onMouseLeave(3)} onMouseEnter={()=>onMouseEnter(3)} onMouseLeave={()=>onMouseLeave(3)} className='menu-item-container'>
                 <div className='menu-item-img-holder'><img src={menuItem4} className='menu-item-image'/></div>

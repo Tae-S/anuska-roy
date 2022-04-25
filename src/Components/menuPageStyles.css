@@ -23,8 +23,9 @@
 
 .menu-item{
     /* font-family: 'Lemonada', cursive; */
-    font-family: 'Averia Sans Libre', cursive;
-    font-weight: 700;
+    /* font-family: 'Averia Sans Libre', cursive; */
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
     font-size:5rem;
     font-style: italic;
     /* border: 1px solid blueviolet; */
@@ -71,6 +72,7 @@
     /* display:none; */
     /* cursor: pointer; */
     z-index:-4;
+    pointer-events: none;
 }
 
 .menu-item-container{
@@ -99,6 +101,14 @@
     height:95vh;
     position: relative;
     z-index:-4;
+    /* border:1px solid black; */
     /* cursor: pointer; */
     
+}
+
+@media only screen and (max-width:1000px) {
+    .menu-item-image{
+        height:60vh;
+        top:80%;
+    }
 }

@@ -2,11 +2,14 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Chewy', cursive;
+    /* font-family: 'Chewy', cursive; */
+    font-family: 'Quicksand', sans-serif;
 }
 
 .nav{    
     position: fixed; 
+    left:3em;
+    border:1px solid black;
 }
 
 .nav-ul{
@@ -26,7 +29,8 @@
     text-decoration: none;
     color:tomato;
     font-weight: 700;
-    font-family: 'Chewy', cursive;
+    /* font-family: 'Chewy', cursive; */
+    font-family: 'Quicksand', sans-serif;
     letter-spacing: 2px;
     font-size: 1.3rem;
 }
@@ -35,8 +39,12 @@
     perspective: 100px;
     transform-style: preserve-3d;
     position: fixed;
-    right:30px;
+    left:25px;
+    /* border: 1px solid black; */
+    width: 10em;
+    height:10em;
     z-index:3 !important;
+    background:transparent;
 }
 
 .mob-nav-menu{
@@ -46,16 +54,17 @@
     border-radius: 50%;
     width:60px;
     height:60px;
-    right:30px;
+    /* right:30px; */
     /* cursor:pointer; */     
     margin: 25px 0 0 35px;
     /* background-color: rgb(128, 171, 250); */
     z-index:3 !important;
     transition: all 0.4s ease-in;
-    /* border: 1px solid black; */
+    left:15px;
     /* display: flex;
     justify-content: center;
     align-items: center; */
+    cursor:pointer;
           
 }
 
@@ -80,22 +89,22 @@
 }
 
 .mob-nav:hover .one{
-    transform:translate(30px,80px) translateZ(20px) skewY(5deg);
+    transform:translate(10px,85px) translateZ(20px) skewY(5deg);
      
 }
 
 .mob-nav:hover .two{
-    transform:translate(115px,90px) translateZ(-10px);
+    transform:translate(100px,90px) translateZ(-10px);
      
 }
 
 .mob-nav:hover .three{
-    transform:translate(100px,10px) skewX(15deg) rotate(45deg);
+    transform:translate(80px,15px) skewX(15deg) rotate(45deg);
      
 }
 
 .mob-nav:hover .four{
-    transform:translate(15px,5px);
+    transform:translate(5px,15px);
      
 }
 
@@ -111,24 +120,24 @@
 }
 
 .one-hover{
-    transform:translate(30px,80px) translateZ(20px) skewY(5deg) !important;
+    transform:translate(10px,85px) translateZ(20px) skewY(5deg) !important;
     opacity:1;
      
 }
 
 .two-hover{
-    transform:translate(115px,90px) translateZ(-10px) !important;
+    transform:translate(100px,90px) translateZ(-10px) !important;
     opacity:1;
      
 }
 
 .three-hover{
-    transform:translate(100px,10px) skewX(15deg) rotate(45deg) !important;
+    transform:translate(80px,15px) skewX(15deg) rotate(45deg) !important;
     opacity:1;     
 }
 
 .four-hover{
-    transform:translate(15px,5px) !important;
+    transform:translate(5px,15px) !important;
     opacity:1;
      
 }
@@ -137,7 +146,7 @@
     background-color: rgb(87, 31, 128);
     color:#aff;
     transform: scale(0.9);
-     
+    background:transparent;
 }
 
 .mob-nav-menu > p{
